@@ -343,8 +343,10 @@ export default class Video extends Component {
           style={StyleSheet.absoluteFill}
         />
         {this.state.showPoster && (
-          <Image style={posterStyle} source={{ uri: this.props.poster }} />
-        )}
+                    typeof this.props.poster === 'string' ?
+                        <Image style={posterStyle} source={{uri: this.props.poster}}/> :
+                        <View style={posterStyle}>{this.props.poster}</View>
+                )}
       </View>
     );
   }
