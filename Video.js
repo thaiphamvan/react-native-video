@@ -416,7 +416,10 @@ Video.propTypes = {
   minLoadRetryCount: PropTypes.number,
   maxBitRate: PropTypes.number,
   resizeMode: PropTypes.string,
-  poster: PropTypes.string,
+  poster: PropTypes.oneOfType([
+	PropTypes.string,
+	PropTypes.object
+  ]),
   posterResizeMode: Image.propTypes.resizeMode,
   repeat: PropTypes.bool,
   automaticallyWaitsToMinimizeStalling: PropTypes.bool,
